@@ -14,12 +14,7 @@ class Home extends CI_Controller {
 	function _order_output($output = null)
 	{
 		$this->load->view('add_order_view',$output);
-	}/*
-	function _output($html = null)
-	{
-		echo $html;
 	}
-*/
 
 	public function add_order()
 	{
@@ -31,13 +26,12 @@ class Home extends CI_Controller {
 		$crud->set_rules('item_id','Main Drink','required')->display_as('item_id','Main Drink')
 			 ->set_rules('item_quantity','Item Quantity','required')->display_as('item_quantity','Item Quantity');
 		//	 ->set_rules('main_item_id','','required')->display_as('main_item_id','Main');
-	
 		$output = $crud->render();
 		$this->_order_output($output);
 	}
-	public function admin_panel()
-	{
-		echo "hi admin";
+	public function index(){
+		$this->load->view('home_page');
 	}
+	
 }
 
